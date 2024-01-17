@@ -4,10 +4,10 @@
 #include <cmath>
 #include <vector>
 
-bool check_number(long number, std::vector<long> primes)
+bool check_number(long number, std::vector<long>& primes)
 {
     auto is_prime = true;
-    for (auto prime : primes) {
+    for (auto& prime : primes) {
         if (prime >= number) {
             break;
         }
@@ -19,7 +19,7 @@ bool check_number(long number, std::vector<long> primes)
     return is_prime;
 }
 
-void check_numbers(long min_prime, long max_prime, std::vector<long> primes)
+void check_numbers(long min_prime, long max_prime, std::vector<long>& primes)
 {
     auto n = min_prime;
     if (n == 2) {
@@ -35,7 +35,7 @@ void check_numbers(long min_prime, long max_prime, std::vector<long> primes)
     }
 }
 
-void consult_numbers(long max_prime, std::vector<long> primes)
+void consult_numbers(long max_prime, std::vector<long>& primes)
 {
     auto i = 0;
     while (i < primes.size() and primes[i] <= max_prime) {
